@@ -35,4 +35,17 @@ public class ProductRepository {
         productHashMap.remove(product.getProductID());
         return product;
     }
+
+    public Product edit(Product product){
+        String idProduct = product.getProductID();
+        Product oldProduct = productHashMap.get(idProduct);
+        if (oldProduct == null) {
+            return null;
+        }
+        String newProductName = product.getProductName();
+        int newProductQuantity = product.getProductQuantity();
+        oldProduct.setProductName(newProductName);
+        oldProduct.setProductQuantity(newProductQuantity);
+        return oldProduct;
+    }
 }
