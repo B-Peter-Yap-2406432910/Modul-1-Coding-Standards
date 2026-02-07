@@ -15,9 +15,9 @@ public class ProductRepository {
     private int idCounter = 0;
 
     public Product create(Product product){
-        product.setProductID(Integer.toString(idCounter));
+        product.setProductId(Integer.toString(idCounter));
         productData.add(product);
-        productHashMap.put(product.getProductID(), product);
+        productHashMap.put(product.getProductId(), product);
         idCounter++;
         return product;
     }
@@ -32,12 +32,12 @@ public class ProductRepository {
 
     public Product delete(Product product){
         productData.remove(product);
-        productHashMap.remove(product.getProductID());
+        productHashMap.remove(product.getProductId());
         return product;
     }
 
     public Product edit(Product product){
-        String idProduct = product.getProductID();
+        String idProduct = product.getProductId();
         Product oldProduct = productHashMap.get(idProduct);
         if (oldProduct == null) {
             return null;
