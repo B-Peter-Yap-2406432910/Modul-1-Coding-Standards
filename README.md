@@ -7,7 +7,11 @@
 - pada code saya, saya sudah memisahkan masing-masing tanggung jawab code saya dengan MVC. serta semua method yang sudah saya buat hanya melakukan 1 tugas saja. 
 
 **Secure Coding**
-- saya menggunakan method HTTP yang tepat sesuai standar REST
+- saya menggunakan UUID yang diubah ke string pada saat pembentukan produk yang lebih aman dan juga sudah menerapkan beberapa metode HTTP yang sesuai pada REST
 
 ## Mistakes
-- bagian Id Product saya masih menggunakan counter int biasa dan bisa ditebak dengan mudah sehingga tidak secure. Perbaikannya adalah bisa menggunakan tipe data UUID yang lebih aman dan random
+- Pada fitur delete, saya masih menggunakan method GetMapping instead of DeleteMapping yang lebih sesuai pada best practice sehingga melanggar standar REST
+- Redundant pada interface. In default, semua method dalam interface sudah pasti dalam bentuk public sehingga tidak perlu menambahkan public lagi
+
+# Reflection 2
+- 
