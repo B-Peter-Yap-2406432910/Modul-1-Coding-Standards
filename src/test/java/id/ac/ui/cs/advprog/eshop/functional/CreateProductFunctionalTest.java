@@ -57,4 +57,13 @@ class CreateProductFunctionalTest {
         String listPageTitle = driver.getTitle();
         assertEquals("Product List", listPageTitle);
     }
+    @Test
+    void createProductPageTitle_isCorrect(ChromeDriver driver) throws Exception {
+        driver.get(baseUrl + "/product/list");
+        WebElement createProductButton = driver.findElement(By.linkText("Create Product"));
+        createProductButton.click();
+
+        String pageTitle = driver.getTitle();
+        assertEquals("Create New Product", pageTitle);
+    }
 }
